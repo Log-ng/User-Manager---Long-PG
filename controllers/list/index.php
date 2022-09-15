@@ -1,10 +1,11 @@
 <?php
-// Headers
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
 
+require_once '../../configs/config.smarty.php';
 include_once '../../configs/config.database.php';
 include_once '../../models/user.model.php';
+
+
+$smarty = new mySmarty();
 
 $database = new Database();
 $db = $database->connect();
@@ -28,12 +29,10 @@ if ($num > 0) {
             'fullName' => $fullName
         );
 
+        // Push to "data"
         array_push($pd_arr, $pd_item);
     }
-
-    echo json_encode($pd_arr);
-} else {
-    echo json_encode(
-        array('message' => 'No user')
-    );
 }
+
+$smarty->assign('users', $pd_arr);
+$smarty->display('template.tpl');
