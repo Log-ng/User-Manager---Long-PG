@@ -11,7 +11,7 @@ $database = new Database();
 $db = $database->connect();
 
 $user = new User($db);
-// Get raw posted data
+
 $data = json_decode(file_get_contents("php://input"));
 
 $user->username = $data->username;

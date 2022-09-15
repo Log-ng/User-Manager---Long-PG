@@ -6,8 +6,8 @@
 </head>
 
 <body>
-<!--add-->
-{block name="add"}{include file="list.user.tpl"}{/block}
+
+{block name="list"}{include file="list.user.tpl"}{/block}
 </body>
 
 </html>
