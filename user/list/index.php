@@ -17,22 +17,21 @@ $result = $user->read();
 $num = $result->rowCount();
 
 if ($num > 0) {
-    $pd_arr = array();
+    $users_arr = array();
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
 
-        $pd_item = array(
+        $user = array(
             'user_id' => $user_id,
             'username' => $username,
             'password' => $password,
             'fullName' => $fullName
         );
 
-        // Push to "data"
-        array_push($pd_arr, $pd_item);
+        array_push($users_arr, $user);
     }
 }
 
-$smarty->assign('users', $pd_arr);
-$smarty->display('template.tpl');
+$smarty->assign('users', $users_arr);
+$smarty->display('list.user.tpl');

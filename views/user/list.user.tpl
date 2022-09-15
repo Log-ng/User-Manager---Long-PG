@@ -1,23 +1,35 @@
-<div class="border mx-5 mt-4 border-success rounded text-center shadow">
-    <table class="table table-bordered table-hover">
-        <thead class="bg-primary text-white">
-        <tr>
-            <th scope="col">No</th>
-            <th scope="col">Full name</th>
-            <th scope="col">Username</th>
-        </tr>
-        </thead>
-        <tbody class="my-1">
-        {foreach from=$users item="user"}
-            <tr class=>
-                <th scope="row">{$user.user_id}</th>
-                <td >{$user.fullName}</td>
-                <td>{$user.username}</td>
-            </tr>
-        {/foreach}
-        </tbody>
-    </table>
-</div>
+{extends file="template.tpl"}
+{block name="title"}Manager User{/block}
+
+{block name="content"}
+    <button type="button" class="btn btn-primary  mx-5 mt-4 " id="button_add" onclick=buttonCreate()>Create new user</button>
+    <div class="border mx-5 mt-4 border-success rounded text-center shadow">
+        <table class="table table-bordered table-hover">
+            <thead class="text-white table-dark">
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Full name</th>
+                    <th scope="col">Username</th>
+                </tr>
+            </thead>
+
+            <tbody class="my-1">
+                {foreach from=$users item="user"}
+                    <tr class=>
+                        <th scope="row">{$user.user_id}</th>
+                        <td>{$user.fullName}</td>
+                        <td>{$user.username}</td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+    </div>
+{/block}
+
+
+
+
+
 
 
 
