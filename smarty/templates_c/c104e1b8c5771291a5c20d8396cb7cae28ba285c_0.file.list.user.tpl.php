@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.46, created on 2022-09-15 11:25:42
+/* Smarty version 3.1.46, created on 2022-09-15 11:35:25
   from 'C:\Apache24\htdocs\managerUser\views\user\list.user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.46',
-  'unifunc' => 'content_63230bb6629df5_43700077',
+  'unifunc' => 'content_63230dfdc5e1e2_16671594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c104e1b8c5771291a5c20d8396cb7cae28ba285c' => 
     array (
       0 => 'C:\\Apache24\\htdocs\\managerUser\\views\\user\\list.user.tpl',
-      1 => 1663241139,
+      1 => 1663241165,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63230bb6629df5_43700077 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63230dfdc5e1e2_16671594 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="border mx-5 mt-4 border-success rounded text-center shadow">
     <table class="table table-bordered table-hover">
         <thead class="bg-primary text-white">
@@ -53,8 +53,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 
 
-<?php echo $_SERVER['HTTP_HOST'];
-echo $_SERVER['REQUEST_URI'];?>
 
 
 <?php }
