@@ -1,6 +1,6 @@
 <?php
 
-header('location: ../managerUser/controllers/list');
+header('location: ../managerUser/user/list');
 
 
 
