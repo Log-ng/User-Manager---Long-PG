@@ -1,7 +1,8 @@
 const errList = {
   fullname: "*Fullname must be in 3 - 20 characters",
   username: "*Username must be in 3 - 10 characters",
-  password: "*password must be in 2 - 8 characters",
+  password: "*Password must be in 2 - 8 characters",
+  usernameExists: "Username already exists",
 };
 
 const buttonCreate = () => {
@@ -43,3 +44,7 @@ const validateForm = () => {
 
   return isValidate;
 };
+
+
+document.getElementById("err-exists").innerHTML = errList.usernameExists;
+

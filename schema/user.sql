@@ -1,5 +1,5 @@
 CREATE TABLE `user` (
-    `username` varchar(255) NOT NULL,
+    `username` varchar(255) NOT NULL UNIQUE,
     `password` varchar(255) NOT NULL,
     `fullName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
