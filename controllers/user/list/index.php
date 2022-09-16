@@ -1,8 +1,8 @@
 <?php
 
-require_once '../../configs/config.smarty.php';
-include_once '../../configs/config.database.php';
-include_once '../../models/user.model.php';
+require_once '../../../base.classes/core/smarty.php';
+include_once '../../../base.classes/core/database.php';
+include_once '../../../models/user.model.php';
 
 
 $smarty = new mySmarty();
@@ -23,7 +23,6 @@ if ($num > 0) {
         extract($row);
 
         $user = array(
-            'user_id' => $user_id,
             'username' => $username,
             'password' => $password,
             'fullName' => $fullName

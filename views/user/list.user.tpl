@@ -1,4 +1,5 @@
-{extends file="template.tpl"}
+{extends file="../common/template.tpl"}
+
 {block name="title"}Manager User{/block}
 
 {block name="content"}
@@ -14,9 +15,9 @@
             </thead>
 
             <tbody class="my-1">
-                {foreach from=$users item="user"}
+                {foreach from=$users key=index item="user"}
                     <tr class=>
-                        <th scope="row">{$user.user_id}</th>
+                    <th scope="row">{$index + 1}</th>
                         <td>{$user.fullName}</td>
                         <td>{$user.username}</td>
                     </tr>
