@@ -9,7 +9,7 @@
 
 {block name="content"}{include file="login.tpl"}{/block}
     
-<script type="text/javascript" src="../../views/js/script.js">
+<script type="text/javascript" src="../../../assets/js/user.js">
 </script>
 </body>
 
