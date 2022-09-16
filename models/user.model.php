@@ -27,7 +27,7 @@ class User {
     }
     
     public function read() {
-        $query = 'SELECT * FROM ' . $this->table . ';';
+        $query = 'SELECT * FROM ' . $this->table;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -37,6 +37,17 @@ class User {
         $validateFullname = strlen($this->fullname) >= 3 and strlen($this->fullname) <= 20;
         $validateusername= strlen($this->username) >= 3 and strlen($this->fullname) <= 10;
         $validatePassword = strlen($this->password) >= 2 and strlen($this->fullname) <= 8;
+
         return $validateFullname and $validateusername and $validatePassword;
+    }
+
+    public function checkUsername() {
+
+        $query = 'SELECT username FROM ' . $this->table . ' WHERE username=?';
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute([$this->username]);
+        $user = $stmt->fetch();
+        return ! $user;
     }
 }
