@@ -5,7 +5,7 @@
 {block name="content"}
 
 <div class="w-50 m-auto border shadow px-5 py-8 rounded mt-4 pl-3">
-<form name="createForm" action="../list" onsubmit="return validateForm()" method="post">
+<form name="createForm" action={$smarty.server.PHP_SELF} onsubmit="return validateForm()" method="post">
     <div class="mb-3 mt-4">
         <label class="form-label">Fullname:</label>
         <span id="err-fullname" class="text-danger small ml-3"></span><br>
