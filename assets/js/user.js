@@ -1,5 +1,5 @@
 const errList = {
-  fullname: "*Fullname must be in 3 - 20 characters",
+  fullname: "*Fullname must be in 3 - 30 characters",
   username: "*Username must be in 3 - 10 characters",
   password: "*Password must be in 2 - 8 characters",
   usernameExists: "Username already exists",
@@ -21,7 +21,7 @@ const validateForm = () => {
 
   let isValidate = true;
 
-  if (fullname.length > 20 || fullname.length < 3) {
+  if (fullname.length > 30 || fullname.length < 3) {
     document.getElementById("err-fullname").innerHTML = errList.fullname;
     isValidate = false;
   } else {
