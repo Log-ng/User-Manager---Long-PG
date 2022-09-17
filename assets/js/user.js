@@ -13,8 +13,12 @@ const buttonLogin = () => {
   window.location = "../list";
 };
 
+const buttonLogout = () => {
+  console.log("Logout");
+  window.location = '../logout';
+}
+
 const validateForm = () => {
-  console.log("run here");
   let fullname = document.createForm.fullname.value;
   let username = document.createForm.username.value;
   let password = document.createForm.password.value;
@@ -41,7 +45,6 @@ const validateForm = () => {
   } else {
     document.getElementById("err-password").innerHTML = '';
   }
-
   return isValidate;
 };
 

@@ -1,3 +1,8 @@
 <?php
+session_start();
 
-header('location: ../managerUser/controllers/user/login');
+if (isset($_SESSION['loggedin'])) {
+	header('location: ./controllers/user/list');
+	exit;
+}
+header('location: ./controllers/user/login');
