@@ -1,7 +1,7 @@
 <?php
 class User {
     private $conn;
-    private $table = 'user';
+    public $table = 'user';
 
     public $username;
     public $password;
@@ -58,5 +58,17 @@ class User {
         $stmt->execute();
         $count = $stmt->fetchColumn();
         return $count;
+    }
+
+    public function authLogin() {
+        $query = 'SELECT * FROM ' . $this->table . ' WHERE username=?';
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute([$this->username]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($user) {
+            return password_verify($this->password, $user['password']);
+        }
+        return false;
     }
 }

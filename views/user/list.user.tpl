@@ -3,7 +3,10 @@
 {block name="title"}Manager User{/block}
 
 {block name="content"}
-    <button type="button" class="btn btn-primary  mx-5 mt-4 " id="button_add" onclick=buttonCreate()>Create new user</button>
+    <div>
+        <button type="button" class="btn btn-primary  mx-5 mt-4 " id="button_add" onclick=buttonCreate()>Create new user</button>
+        <button type="button" class="btn btn-danger  mx-5 mt-4 " id="button_logout" onclick=buttonLogout()>Logout</button>
+    </div>
     <div class="border mx-5 mt-4 border-success rounded text-center shadow">
         <table class="table table-bordered table-hover">
             <thead class="text-white table-dark">

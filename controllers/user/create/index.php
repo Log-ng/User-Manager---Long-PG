@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['loggedin'])) {
+	header('location: ../login');
+	exit;
+    
+}
+
 require_once '../../../base.classes/core/smarty.php';
 include_once '../../../base.classes/core/database.php';
 include_once '../../../models/user.model.php';
@@ -15,7 +22,7 @@ $user = new User($db);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user->username = htmlspecialchars($_POST['username']);
-    $user->password = htmlspecialchars($_POST['password']);
+    $user->password = password_hash(htmlspecialchars($_POST['password']), PASSWORD_DEFAULT);
     $user->fullname = htmlspecialchars($_POST['fullname']);
 
     if($user->validate() and $user->checkUsername()) {  
