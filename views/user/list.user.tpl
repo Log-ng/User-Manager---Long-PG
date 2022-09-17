@@ -17,7 +17,7 @@
             <tbody class="my-1">
                 {foreach from=$users key=index item="user"}
                     <tr class=>
-                    <th scope="row">{$index + 1}</th>
+                    <th scope="row">{$index + 1 + ($currentPage - 1)* $RECORD_PER_PAGE}</th>
                         <td>{$user.fullName}</td>
                         <td>{$user.username}</td>
                     </tr>

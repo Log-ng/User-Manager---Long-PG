@@ -25,7 +25,11 @@
         <input type="password" class="form-control" name="password" id="password">
     </div>
 
-    <button type="submit" value="Submit" class="btn btn-primary mb-4" id="button_create" >Create</button>
+    <div class="d-flex justify-content-around">   
+        <button type="submit" value="Submit" class="btn btn-primary mb-4 px-5" id="button_create" >Create</button>
+<button class="btn btn-danger mb-4 px-5" type="button" onclick=buttonLogin()>Back</button>
+    </div>
+
     </form>
 </div>
 

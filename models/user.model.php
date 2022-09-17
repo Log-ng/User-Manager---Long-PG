@@ -34,7 +34,7 @@ class User {
     }
 
     public function validate() {
-        $validateFullname = strlen($this->fullname) >= 3 and strlen($this->fullname) <= 20;
+        $validateFullname = strlen($this->fullname) >= 3 and strlen($this->fullname) <= 30;
         $validateusername= strlen($this->username) >= 3 and strlen($this->fullname) <= 10;
         $validatePassword = strlen($this->password) >= 2 and strlen($this->fullname) <= 8;
 
@@ -49,5 +49,14 @@ class User {
         $stmt->execute([$this->username]);
         $user = $stmt->fetch();
         return ! $user;
+    }
+
+    public function totalUser() {
+        $query = 'SELECT count(*) as userCount FROM ' . $this->table;
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+        return $count;
     }
 }
