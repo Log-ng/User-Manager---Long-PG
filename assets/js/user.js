@@ -29,21 +29,21 @@ const validateForm = () => {
     document.getElementById("err-fullname").innerHTML = errList.fullname;
     isValidate = false;
   } else {
-    document.getElementById("err-fullname").innerHTML = '';
+    document.getElementById("err-fullname").innerHTML = ' ';
   }
 
   if (username.length > 10 || username.length < 3) {
     document.getElementById("err-username").innerHTML = errList.username;
     isValidate = false;
   } else {
-    document.getElementById("err-username").innerHTML = '';
+    document.getElementById("err-username").innerHTML = ' ';
   }
 
   if (password.length > 8 || password.length < 2) {
     document.getElementById("err-password").innerHTML = errList.password;
     isValidate = false;
   } else {
-    document.getElementById("err-password").innerHTML = '';
+    document.getElementById("err-password").innerHTML = ' ';
   }
   return isValidate;
 };
